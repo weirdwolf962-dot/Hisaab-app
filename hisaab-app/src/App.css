@@ -693,22 +693,67 @@ body {
   justify-content: center;
   gap: 0.4rem;
 }
-
 .tab:hover { color: var(--ink); }
-
-.tab--active {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
+.tab--active { color: var(--accent); border-bottom-color: var(--accent); }
 .tab-badge {
-  background: var(--accent);
-  color: white;
-  font-size: 0.6rem;
-  padding: 1px 5px;
-  border-radius: 10px;
-  font-weight: 700;
+  background: var(--accent); color: white;
+  font-size: 0.6rem; padding: 1px 5px;
+  border-radius: 10px; font-weight: 700;
 }
+
+/* ── Grand Summary Card ── */
+.summary-card { }
+
+.summary-grid {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.summary-item--total {
+  flex: 1;
+  align-items: flex-end;
+}
+
+.summary-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.summary-val--big {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.summary-key {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.summary-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ── PDF button variant ── */
+.btn-pdf {
+  background: var(--ink) !important;
+  border-color: var(--ink) !important;
+  color: var(--paper) !important;
+}
+.btn-pdf:hover { background: var(--accent) !important; border-color: var(--accent) !important; }
 
 /* ── History card ── */
 .history-card-header {
@@ -725,37 +770,52 @@ body {
   margin-top: 0.2rem;
 }
 
-.history-total {
-  color: var(--accent);
-  font-weight: 600;
-}
+.history-total { color: var(--accent); font-weight: 600; }
 
-.history-actions {
-  display: flex;
-  gap: 0.4rem;
-}
+.history-actions { display: flex; gap: 0.4rem; }
 
 .btn-icon {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
   border: 1px solid var(--line);
   border-radius: var(--r);
   background: var(--paper-dark);
-  cursor: pointer;
-  font-size: 0.85rem;
+  cursor: pointer; font-size: 0.85rem;
   transition: all 0.15s;
 }
-
 .btn-icon:hover { border-color: var(--ink); background: var(--paper-ruled); }
-
 .btn-icon--share {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: white;
-  font-weight: 700;
+  background: var(--ink); border-color: var(--ink);
+  color: white; font-weight: 700;
+}
+.btn-icon--share:hover { background: var(--accent); border-color: var(--accent); }
+
+/* ── Unified bill day sections ── */
+.bill-day-section {
+  margin-bottom: 1rem;
 }
 
-.btn-icon--share:hover { background: var(--accent-light); border-color: var(--accent-light); }
+.bill-day-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-left: 2px solid var(--accent);
+  padding-left: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.bill-day-subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--ink-light);
+  padding: 0.3rem 0.25rem;
+  background: var(--paper-dark);
+  border-radius: 2px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
